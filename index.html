@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ASF Yoga — Aquecimento e yoga para surfistas</title>
+<meta name="description" content="Rotinas guiadas de aquecimento e yoga para surf com timer. Satélite do app ASF.">
+<style>
+:root{--rosa:#e63970;--areia:#fff5ee;--mar:#0b6e6e;--escuro:#12303a}
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Segoe UI',system-ui,sans-serif}
+body{background:var(--areia);color:var(--escuro)}
+header{background:linear-gradient(135deg,#11998e,#38ef7d);color:#fff;padding:2.5rem 1rem;text-align:center}
+nav{background:var(--escuro);display:flex;flex-wrap:wrap;justify-content:center;gap:.25rem;padding:.5rem;position:sticky;top:0;z-index:10}
+nav a{color:#fff;text-decoration:none;padding:.45rem .7rem;border-radius:.5rem;font-size:.85rem}
+nav a:hover,nav a.ativo{background:var(--rosa)}
+main{max-width:720px;margin:0 auto;padding:2rem 1rem}
+.card{background:#fff;border-radius:1rem;padding:1.5rem;margin-bottom:1.5rem;box-shadow:0 2px 10px rgba(0,0,0,.07)}
+.card h2{color:#11998e;margin-bottom:.6rem}
+.rotinas{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1rem}
+.rotinas button{background:var(--areia);border:2px solid #eee;border-radius:.75rem;padding:1rem;cursor:pointer;text-align:left;font-size:.95rem}
+.rotinas button:hover{border-color:#11998e}
+.rotinas strong{display:block;color:var(--escuro)}
+#timerBox{text-align:center;padding:1.5rem;display:none}
+#timer{font-size:4rem;font-weight:bold;color:#11998e}
+#exNome{font-size:1.3rem;margin:.5rem 0}
+#exDesc{color:#666;min-height:2.5rem}
+.ctl{display:flex;gap:.7rem;justify-content:center;margin-top:1rem}
+.ctl button{padding:.7rem 1.4rem;border:none;border-radius:2rem;font-size:1rem;cursor:pointer}
+#btnPausar{background:#f4a259;color:#fff}#btnCancelar{background:#ccc;color:#333}
+.prog{height:8px;background:#eee;border-radius:4px;margin-top:1rem;overflow:hidden}
+.prog div{height:100%;background:linear-gradient(90deg,#11998e,#38ef7d);width:0;transition:width .5s}
+footer{background:var(--escuro);color:#cfe;padding:1.5rem;text-align:center;font-size:.85rem;margin-top:2rem}
+footer a{color:#ff9ec0}
+</style>
+</head>
+<body>
+<header><h1>🧘‍♀️ ASF Yoga</h1><p>Aquecimento e yoga guiado para surfistas</p></header>
+<nav>
+<a href="https://acarolmourad-commits.github.io/asf-app/">🏄‍♀️ App</a>
+<a href="https://acarolmourad-commits.github.io/asf-praias/">🏖️ Praias</a>
+<a href="https://acarolmourad-commits.github.io/asf-previsao/">🌊 Previsão</a>
+<a href="https://acarolmourad-commits.github.io/asf-treino/">💪 Treino</a>
+<a href="https://acarolmourad-commits.github.io/asf-diario/">📝 Diário</a>
+<a class="ativo" href="https://acarolmourad-commits.github.io/asf-yoga/">🧘‍♀️ Yoga</a>
+<a href="https://acarolmourad-commits.github.io/asf-eventos/">📅 Eventos</a>
+<a href="https://acarolmourad-commits.github.io/asf-glossario/">📖 Glossário</a>
+<a href="https://acarolmourad-commits.github.io/asf-comunidade/">🌸 Comunidade</a>
+<a href="https://acarolmourad-commits.github.io/asf-seguranca/">🛟 Segurança</a>
+<a href="https://acarolmourad-commits.github.io/asf-sos/">🆘 SOS</a>
+<a href="https://acarolmourad-commits.github.io/asf-equipamento/">🏄 Equipamento</a>
+<a href="https://acarolmourad-commits.github.io/asf-quiz/">❓ Quiz</a>
+<a href="https://acarolmourad-commits.github.io/asf-eco/">🌱 Eco</a>
+</nav>
+<main>
+<div class="card"><h2>Escolha sua rotina ✨</h2><div class="rotinas" id="rotinas"></div></div>
+<div class="card" id="timerBox"><div id="exNome"></div><div id="timer">0:00</div><p id="exDesc"></p><div class="prog"><div id="bar"></div></div>
+<div class="ctl"><button id="btnPausar" onclick="pausar()">⏸ Pausar</button><button id="btnCancelar" onclick="cancelar()">✖ Encerrar</button></div></div>
+<div class="card"><h2>Por que yoga para surfistas? 🌊</h2><p>Yoga melhora equilíbrio, flexibilidade e respiração — essenciais para o surf. Depois da sessão, registre tudo no <a href="https://acarolmourad-commits.github.io/asf-diario/">ASF Diário</a> e planeje treinos no <a href="https://acarolmourad-commits.github.io/asf-treino/">ASF Treino</a>.</p></div>
+</main>
+<footer>Parte do ecossistema <a href="https://acarolmourad-commits.github.io/asf-app/">ASF — Associação de Surf Feminino</a> · Publicado via GitHub Pages</footer>
+<script>
+const ROT={
+ pre:{nome:'🔥 Aquecimento pré-surf (5 min)',ex:[['Rotação de ombros',30,'Circule os ombros para frente e para trás'],['Alongamento de coluna',30,'Incline o tronco lateralmente, respirando fundo'],['Agachamento dinâmico',45,'Agache e suba controlando a respiração'],['Pop-up no chão',45,'Simule o pop-up da prancha com explosão'],['Respiração profunda',60,'Inspire 4s, segure 4s, expire 6s'],['Prancha isométrica',60,'Core firme, corpo alinhado'],['Alongamento de quadril',60,'Borboleta + avanço lateral']]},
+ pos:{nome:'🌅 Relaxamento pós-surf (6 min)',ex:[['Criança (balasana)',60,'Joelhos abertos, braços à frente'],['Cão olhando para baixo',45,'Empurre o chão, calcanhares ao solo'],['Torção sentada',60,'Gire o tronco para cada lado'],['Pombos',90,'Alongue glúteos, 45s cada lado'],['Savasana',105,'Deite, solte o corpo, respire']]},
+ resp:{nome:'🫁 Apneia e respiração (4 min)',ex:[['Respiração diafragmática',60,'Barriga expande, peito quieto'],['Inspire 4s / Segure 4s',60,'Ritmo quadrado calmante'],['Expiração longa',60,'Expire em 8 segundos'],['Respiração alternada',60,'Tampe uma narina por vez']]}
+};
+const rDiv=document.getElementById('rotinas');
+Object.entries(ROT).forEach(([k,r])=>{const b=document.createElement('button');b.innerHTML=`<strong>${r.nome}</strong>${r.ex.length} exercícios`;b.onclick=()=>iniciar(k);rDiv.appendChild(b);});
+let seq=[],idx=0,rest=0,tick=null,pausado=false;
+function fmt(s){return Math.floor(s/60)+':'+String(s%60).padStart(2,'0');}
+function iniciar(k){seq=ROT[k].ex;idx=0;document.getElementById('timerBox').style.display='block';document.getElementById('timerBox').scrollIntoView({behavior:'smooth'});proximo();}
+function proximo(){
+ if(idx>=seq.length){fim();return;}
+ const[nome,dur,desc]=seq[idx];rest=dur;pausado=false;document.getElementById('btnPausar').textContent='⏸ Pausar';
+ document.getElementById('exNome').textContent=`${idx+1}/${seq.length} — ${nome}`;document.getElementById('exDesc').textContent=desc;
+ document.getElementById('bar').style.width=(idx/seq.length*100)+'%';atualiza();
+ clearInterval(tick);tick=setInterval(()=>{if(!pausado){rest--;atualiza();if(rest<=0){idx++;proximo();}}},1000);
+}
+function atualiza(){document.getElementById('timer').textContent=fmt(rest);}
+function pausar(){pausado=!pausado;document.getElementById('btnPausar').textContent=pausado?'▶ Continuar':'⏸ Pausar';}
+function cancelar(){clearInterval(tick);document.getElementById('timerBox').style.display='none';}
+function fim(){clearInterval(tick);document.getElementById('bar').style.width='100%';document.getElementById('exNome').textContent='🎉 Rotina concluída!';document.getElementById('timer').textContent='✓';document.getElementById('exDesc').innerHTML='Boa! Agora confira a <a href="https://acarolmourad-commits.github.io/asf-previsao/">previsão</a> e bora pro mar!';}
+</script>
+</body>
+</html>
