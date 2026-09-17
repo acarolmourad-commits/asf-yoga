@@ -1,92 +1,40 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ASF Yoga — ASF</title>
-<meta name="description" content="Aquecimento e yoga guiado para surfistas com timer">
-<style>
-:root{--rosa:#ff4d8d;--roxo:#7b2ff7;--areia:#fff5ec;--mar:#00c2cb}
-*{margin:0;padding:0;box-sizing:border-box;font-family:'Segoe UI',system-ui,sans-serif}
-body{background:linear-gradient(160deg,#fff5ec,#ffe3f1 60%,#e0f7fa);min-height:100vh;color:#333}
-header{background:linear-gradient(90deg,var(--rosa),var(--roxo));color:#fff;padding:2rem 1rem;text-align:center}
-header h1{font-size:2rem} header p{opacity:.9;margin-top:.4rem}
-nav{display:flex;flex-wrap:wrap;gap:.4rem;justify-content:center;padding:.8rem;background:#fff;box-shadow:0 2px 8px #0001;position:sticky;top:0;z-index:10}
-nav a{background:var(--areia);border:1px solid #ffd3e6;color:#c2185b;padding:.3rem .7rem;border-radius:20px;font-size:.78rem;text-decoration:none}
-nav a:hover{background:var(--rosa);color:#fff}
-main{max-width:760px;margin:1.5rem auto;padding:0 1rem}
-.card{background:#fff;border-radius:16px;padding:1.4rem;box-shadow:0 4px 16px #7b2ff720;margin-bottom:1.2rem}
-.card h2{color:var(--roxo);margin-bottom:.6rem;font-size:1.2rem}
-button{background:linear-gradient(90deg,var(--rosa),var(--roxo));color:#fff;border:none;padding:.6rem 1.2rem;border-radius:24px;font-size:1rem;cursor:pointer}
-button:hover{opacity:.85}
-input,select,textarea{padding:.5rem;border:1px solid #ddd;border-radius:10px;width:100%;margin:.3rem 0;font-size:1rem}
-.xp{position:fixed;bottom:1rem;right:1rem;background:#fff;border:2px solid var(--rosa);border-radius:24px;padding:.4rem 1rem;font-weight:bold;color:var(--roxo);box-shadow:0 4px 12px #0002}
-footer{text-align:center;padding:2rem;font-size:.8rem;color:#888}
-</style>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>ASF Yoga — Yoga para Surfistas</title>
+<meta name="description" content="Sequência guiada de yoga para surfistas com timer animado. Satélite do app ASF.">
+<style>:root{--p:#00a8cc;--pd:#0e2439;--g:#f4d03f}*{box-sizing:border-box;margin:0}body{font-family:system-ui,sans-serif;background:#f6fbfd;color:var(--pd);text-align:center}nav{background:var(--pd);padding:9px 12px;display:flex;flex-wrap:wrap;gap:6px;text-align:left}nav a{color:#fff;text-decoration:none;font-size:11px;font-weight:600;padding:4px 8px;border-radius:20px;background:rgba(255,255,255,.08)}nav a.hub{background:var(--g);color:var(--pd)}header{padding:32px 20px;background:linear-gradient(135deg,#9b59b618,#00a8cc15)}h1{font-size:25px}main{max-width:480px;margin:20px auto;padding:0 16px}.card{background:#fff;border-radius:16px;padding:24px;box-shadow:0 2px 12px rgba(0,0,0,.07)}.pose{font-size:64px;margin:8px 0}.pname{font-size:20px;font-weight:700}.timer{font-size:52px;font-weight:800;color:var(--p);font-variant-numeric:tabular-nums}.ring{width:150px;height:150px;margin:10px auto;border-radius:50%;display:flex;align-items:center;justify-content:center}.btn{background:linear-gradient(135deg,var(--p),var(--pd));color:#fff;border:none;border-radius:12px;padding:13px 26px;font-weight:700;cursor:pointer;margin:6px 4px}.muted{color:#678;font-size:13px}footer{padding:26px;font-size:12px;color:#678}</style>
 </head>
 <body>
-<header><h1>🧘‍♀️ ASF Yoga</h1><p>Aquecimento e yoga guiado para surfistas com timer</p></header>
-<nav><a href="https://acarolmourad-commits.github.io/asf-app/">🏄‍♀️ ASF App</a>
-<a href="https://acarolmourad-commits.github.io/asf-praias/">Praias</a>
-<a href="https://acarolmourad-commits.github.io/asf-previsao/">Previsao</a>
-<a href="https://acarolmourad-commits.github.io/asf-treino/">Treino</a>
-<a href="https://acarolmourad-commits.github.io/asf-eventos/">Eventos</a>
-<a href="https://acarolmourad-commits.github.io/asf-glossario/">Glossario</a>
-<a href="https://acarolmourad-commits.github.io/asf-seguranca/">Seguranca</a>
-<a href="https://acarolmourad-commits.github.io/asf-comunidade/">Comunidade</a>
-<a href="https://acarolmourad-commits.github.io/asf-equipamento/">Equipamento</a>
-<a href="https://acarolmourad-commits.github.io/asf-quiz/">Quiz</a>
-<a href="https://acarolmourad-commits.github.io/asf-nutricao/">Nutricao</a>
-<a href="https://acarolmourad-commits.github.io/asf-historia/">Historia</a>
-<a href="https://acarolmourad-commits.github.io/asf-viagens/">Viagens</a>
-<a href="https://acarolmourad-commits.github.io/asf-bemestar/">Bemestar</a>
-<a href="https://acarolmourad-commits.github.io/asf-diario/">Diario</a>
-<a href="https://acarolmourad-commits.github.io/asf-eco/">Eco</a>
-<a href="https://acarolmourad-commits.github.io/asf-kids/">Kids</a>
-<a href="https://acarolmourad-commits.github.io/asf-mental/">Mental</a>
-<a href="https://acarolmourad-commits.github.io/asf-ranking/">Ranking</a>
-<a href="https://acarolmourad-commits.github.io/asf-respira/">Respira</a>
-<a href="https://acarolmourad-commits.github.io/asf-sos/">Sos</a>
-<a href="https://acarolmourad-commits.github.io/asf-volume/">Volume</a></nav>
+<nav>
+<a class="hub" href="https://acarolmourad-commits.github.io/asf-app/">🏄‍♀️ ASF App</a>
+<a href="https://acarolmourad-commits.github.io/asf-bemestar/">🧘</a><a href="https://acarolmourad-commits.github.io/asf-respira/">🫁</a><a href="https://acarolmourad-commits.github.io/asf-treino/">💪</a><a href="https://acarolmourad-commits.github.io/asf-popup/">⏱️</a><a href="https://acarolmourad-commits.github.io/asf-vento/">💨</a><a href="https://acarolmourad-commits.github.io/asf-atlas/">🗺️</a><a href="https://acarolmourad-commits.github.io/asf-mala/">🎒</a><a href="https://acarolmourad-commits.github.io/asf-mare/">🌙</a><a href="https://acarolmourad-commits.github.io/asf-previsao/">🌊</a><a href="https://acarolmourad-commits.github.io/asf-praias/">🏖️</a><a href="https://acarolmourad-commits.github.io/asf-desafio/">🗓️</a><a href="https://acarolmourad-commits.github.io/asf-eventos/">📅</a><a href="https://acarolmourad-commits.github.io/asf-glossario/">📖</a><a href="https://acarolmourad-commits.github.io/asf-memoria/">🧩</a><a href="https://acarolmourad-commits.github.io/asf-manobras/">🤸</a><a href="https://acarolmourad-commits.github.io/asf-comunidade/">💜</a><a href="https://acarolmourad-commits.github.io/asf-seguranca/">🛟</a><a href="https://acarolmourad-commits.github.io/asf-sos/">🆘</a><a href="https://acarolmourad-commits.github.io/asf-leitura/">👁️</a><a href="https://acarolmourad-commits.github.io/asf-quiz/">🧠</a><a href="https://acarolmourad-commits.github.io/asf-equipamento/">🏄</a><a href="https://acarolmourad-commits.github.io/asf-nutricao/">🥑</a><a href="https://acarolmourad-commits.github.io/asf-viagens/">✈️</a><a href="https://acarolmourad-commits.github.io/asf-historia/">📜</a><a href="https://acarolmourad-commits.github.io/asf-diario/">📓</a><a href="https://acarolmourad-commits.github.io/asf-volume/">📐</a>
+</nav>
+<header><h1>🧘‍♀️ ASF Yoga</h1><p class="muted">Sequência de 8 minutos para o corpo da surfista — pré ou pós sessão</p></header>
 <main>
-<div class="card"><h2>Sequência Pré-Surf (6 min)</h2><ol id="seq"></ol>
-<h3 id="pose" style="margin:.6rem 0">Toque iniciar</h3><progress id="pg" value="0" max="30" style="width:100%"></progress>
-<button onclick="go()" style="margin-top:.6rem">Iniciar</button></div>
-<div class="card"><h2>🌐 Ecossistema ASF</h2><p>Este app faz parte da constelação ASF — Associação de Surf Feminino. Ganhe XP aqui e veja seu progresso no <a href="https://acarolmourad-commits.github.io/asf-ranking/">ASF Ranking</a>. App principal: <a href="https://acarolmourad-commits.github.io/asf-app/">ASF App</a>.</p></div>
+<div class="card">
+<div class="pose" id="pose">🌅</div>
+<p class="pname" id="pname">Sequência pronta</p>
+<p class="muted" id="pdesc">8 posturas focadas em quadril, ombros e lombar</p>
+<p class="timer" id="t">—</p>
+<p class="muted" id="prog">Postura — / 8</p>
+<button class="btn" id="go" onclick="start()">▶ Começar sequência</button>
+</div>
+<p class="muted" style="margin-top:14px">Combine com o <a href="https://acarolmourad-commits.github.io/asf-respira/">ASF Respira</a> para a parte respiratória e o <a href="https://acarolmourad-commits.github.io/asf-bemestar/">Bem-estar</a> para a rotina completa.</p>
 </main>
-<div class="xp">⭐ XP: <span id="xp">0</span></div>
-<footer>ASF — Associação de Surf Feminino · Feito com 🌊 e 💜 · <a href="https://acarolmourad-commits.github.io/asf-app/">asf-app</a></footer>
+<footer>Parte da constelação ASF • <a href="https://acarolmourad-commits.github.io/asf-app/">Voltar ao app principal</a></footer>
 <script>
-const XP=()=>parseInt(localStorage.getItem('asf_xp')||'0');
-function addXP(n){localStorage.setItem('asf_xp',XP()+n);document.getElementById('xp').textContent=XP();}
-document.getElementById('xp').textContent=XP();
-const poses=['Gato-vaca','Cão olhando para baixo','Guerreiro I','Guerreiro II','Triângulo','Cadeira','Torção sentada','Pombo','Prancha baixa','Cobra','Criança','Respiração final'];document.getElementById('seq').innerHTML=poses.map(p=>`<li>${p}</li>`).join('');let run=false;function go(){if(run)return;run=true;let i=0;const t=setInterval(()=>{document.getElementById('pose').textContent=`${i+1}. ${poses[i]} (30s)`;let s=0;const pg=document.getElementById('pg');const iv=setInterval(()=>{pg.value=++s;if(s>=30)clearInterval(iv);},1000);i++;if(i>=poses.length){clearInterval(t);document.getElementById('pose').textContent='Namastê 🌊 Corpo pronto pro mar!';addXP(20);run=false;}},30000);}
-</script>
-
-<!-- ASF Ecossistema Nav v2 (rede completa, 21 sites) -->
-<script>
-(function(){
-  function injectNav(){
-    if(document.querySelector('.asf-sat-nav'))return;
-    var old=document.querySelector('.asf-rede-nav');if(old)old.remove();
-    var sites=[["asf-app","\u{1F30A} App"],["asf-praias","\u{1F3D6}\uFE0F Praias"],["asf-previsao","\u{1F4C8} Previs\u00E3o"],["asf-treino","\u{1F3CB}\uFE0F Treino"],["asf-eventos","\u{1F4C5} Eventos"],["asf-glossario","\u{1F4D6} Gloss\u00E1rio"],["asf-comunidade","\u{1F4AC} Comunidade"],["asf-seguranca","\u{1F6FA} Seguran\u00E7a"],["asf-equipamento","\u{1F3C4}\u200D\u2640\uFE0F Equipamento"],["asf-quiz","\u{1F9E0} Quiz"],["asf-nutricao","\u{1F957} Nutri\u00E7\u00E3o"],["asf-viagens","\u{2708}\uFE0F Viagens"],["asf-historia","\u{1F3C6} Hist\u00F3ria"],["asf-bemestar","\u{1F9D8}\u200D\u2640\uFE0F Bem-estar"],["asf-ranking","\u{1F947} Ranking"],["asf-diario","\u{1F4D3} Di\u00E1rio"],["asf-respira","\u{1FAC1} Respira"],["asf-volume","\u{1F4D0} Volume"],["asf-yoga","\u{1F9D8} Yoga"],["asf-sos","\u{1F198} SOS"],["asf-eco","\u{1F331} Eco"]];
-    var nav=document.createElement('nav');
-    nav.className='asf-sat-nav';
-    nav.setAttribute('aria-label','Ecossistema ASF');
-    nav.style.cssText='background:linear-gradient(135deg,#0ea5e9,#6366f1);padding:.6rem 1rem;display:flex;flex-wrap:wrap;gap:.35rem;justify-content:center;position:sticky;top:0;z-index:10000;';
-    sites.forEach(function(s){
-      var a=document.createElement('a');
-      a.href='https://acarolmourad-commits.github.io/'+s[0]+'/';
-      a.textContent=s[1];
-      a.style.cssText='color:#e0f2fe;text-decoration:none;font-weight:600;font-size:.75rem;padding:.28rem .55rem;border-radius:999px;background:rgba(255,255,255,.12);font-family:inherit;';
-      a.onmouseover=function(){a.style.background='rgba(255,255,255,.35)';};
-      a.onmouseout=function(){a.style.background='rgba(255,255,255,.12)';};
-      nav.appendChild(a);
-    });
-    document.body.insertBefore(nav,document.body.firstChild);
-  }
-  if(document.readyState==='loading'){document.addEventListener('DOMContentLoaded',injectNav);}else{injectNav();}
-})();
+const SEQ=[['🌅','Saudação ao sol — adaptada','Flua devagar, acordando o corpo',60],['🐱','Gato-vaca','Mobilidade da coluna, base da remada',60],['🐍','Cobra','Abre o peito e fortalece a lombar para o pop-up',45],['🐕','Cachorro olhando para baixo','Alonga posteriores e ombros',60],['🦎','Lagarto baixo','Abre o quadril para o drop',60],['🪶','Guerreiro II','Pernas fortes para a base da prancha',45],['🧘‍♀️','Borboleta sentada','Soltura final do quadril',60],['😌','Savasana','Respire e visualize sua próxima onda',60]];
+let i=0,timer=null;
+function start(){i=0;document.getElementById('go').style.display='none';next()}
+function next(){
+ if(i>=SEQ.length){document.getElementById('pose').textContent='🏆';document.getElementById('pname').textContent='Namastê, mana!';document.getElementById('pdesc').textContent='Sequência completa — corpo pronto para o mar';document.getElementById('t').textContent='💜';document.getElementById('prog').textContent='8/8';document.getElementById('go').style.display='inline-block';document.getElementById('go').textContent='↺ De novo';return}
+ const[e,n,d,s]=SEQ[i];
+ document.getElementById('pose').textContent=e;document.getElementById('pname').textContent=n;document.getElementById('pdesc').textContent=d;document.getElementById('prog').textContent='Postura '+(i+1)+' / 8';
+ let sec=s;document.getElementById('t').textContent=sec+'s';
+ timer=setInterval(()=>{sec--;document.getElementById('t').textContent=sec+'s';if(sec<=0){clearInterval(timer);i++;next()}},1000);
+}
 </script>
 </body>
 </html>
